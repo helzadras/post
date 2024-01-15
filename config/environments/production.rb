@@ -94,5 +94,8 @@ Rails.application.configure do
   # ]
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
-  config.action_mailer.default_url_options = { host: 'www.boa.com' }
+  config.action_mailer.default_url_options = { host: 'https://boa-g99y.onrender.com' }
+
+  config.secret_key_base = ENV["SECRET_KEY_BASE"]
+
 end
