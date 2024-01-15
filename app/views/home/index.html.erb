@@ -1,0 +1,12 @@
+<% if user_signed_in? %>
+
+    <%= render 'accounts_path' %>
+    <%= render 'expenses_path' %>
+
+<% else %>
+
+    <h1>BOA</h1>
+    <p>book of accounts</p>
+    <p> please sign in</p>
+
+<% end %>

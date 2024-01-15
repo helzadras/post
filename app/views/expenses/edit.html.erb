@@ -1,0 +1,10 @@
+<h1>Editing expense</h1>
+
+<%= render "form", expense: @expense %>
+
+<br>
+
+<div>
+  <%= link_to "Show", @expense, class:"btn btn-secondary" %>
+  <%= link_to "Back", account_path(@account), class:"btn btn-secondary" %>
+</div>

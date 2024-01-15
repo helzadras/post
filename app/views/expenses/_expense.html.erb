@@ -1,0 +1,48 @@
+<div id="<%= dom_id expense %>">
+  
+  <p>
+    <strong>Funds:</strong>
+    <%= number_to_currency(expense.funds) %>
+  </p>
+
+  <p>
+    <strong>Creditor:</strong>
+    <%= expense.creditor %>
+  </p>
+
+  <p>
+    <strong>Purpose:</strong>
+    <%= expense.purpose %>
+  </p>
+
+  <p>
+    <strong>Initial balance:</strong>
+    <%= number_to_currency(expense.initial_balance) %>
+  </p>
+
+  <p>
+    <strong>Interest:</strong>
+    <%= expense.interest %>%
+  </p>
+
+  <p>
+    <strong>Current balance:</strong>
+    <%= number_to_currency(expense.current_balance) %>
+  </p>
+
+  <p>
+    <strong>Due date:</strong>
+    <%= expense.due_date %>
+  </p>
+
+  <p>
+    <strong>Terms:</strong>
+    <%= expense.terms %>
+  </p>
+
+  <p>
+    <strong>Amount due:</strong>
+    <%= number_to_currency(expense.amount_due) %>
+  </p>
+
+</div>

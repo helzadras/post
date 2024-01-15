@@ -1,0 +1,10 @@
+<%= form_tag(add_funds_expense_path(@expense), method: :get) do %>
+    <%= label_tag 'amount', 'Enter Amount (Leave blank to use default):' %>
+    <%= text_field_tag 'amount' %>
+  
+    <%= label_tag 'use_default', 'Use Default Amount:' %>
+    <%= check_box_tag 'use_default', 1 %>
+  
+    <%= submit_tag 'Add Funds', class: 'btn btn-primary' %>
+  <% end %>
+  

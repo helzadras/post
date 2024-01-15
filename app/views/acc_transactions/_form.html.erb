@@ -1,0 +1,41 @@
+<%= form_with(model: acc_transaction) do |form| %>
+  <% if acc_transaction.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(acc_transaction.errors.count, "error") %> prohibited this acc_transaction from being saved:</h2>
+
+      <ul>
+        <% acc_transaction.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <br/>
+  <div>
+    <%= form.date_field :date, class:"form-control", placeholder:"date" %>
+  </div>
+<br/>
+  <div>
+    <%= form.text_field :source, class:"form-control", placeholder:"source" %>
+  </div>
+  <br/>
+  <div>
+    <%= form.text_field :description, class:"form-control", placeholder:"description" %>
+  </div>
+  <br/>
+  <div>
+    <%= form.text_field :amount, class:"form-control", placeholder:"amount" %>
+  </div>
+  <br/>
+  <div>
+    <%= form.hidden_field :user_id, value: @user.id %>
+  </div>
+
+  <div>
+    <%= form.hidden_field :account_id, value: @account.id %>
+  </div>
+
+  <div>
+  <%= form.submit "Submit", class: "btn btn-success" %>
+  </div>
+<% end %>

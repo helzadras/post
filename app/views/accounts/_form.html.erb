@@ -1,0 +1,38 @@
+<%= form_with(model: account) do |form| %>
+  <% if account.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(account.errors.count, "error") %> prohibited this account from being saved:</h2>
+
+      <ul>
+        <% account.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <% form.label :name, style: "display: block" %>
+    <%= form.text_field :name, class:"form-control", placeholder:"name" %>
+  </div>
+<br/>
+  <div>
+    <% form.label :current_balance, style: "display: block" %>
+    <%= form.text_field :current_balance, class:"form-control", placeholder:"balance", value: number_to_currency(@account.current_balance) %>
+  </div>
+
+  <div>
+    <% form.label :available_balance, style: "display: block" %>
+    <% form.text_field :available_balance %>
+  </div>
+<br/>
+  <div>
+    <% form.label :user_id, style: "display: block" %>
+    <%= form.number_field :user_id, id: :friend_user, class:"form-control", value:current_user.id, type: :hidden %>
+  </div>
+
+  <div>
+  <%= form.submit "Submit", class: "btn btn-success" %>
+
+  </div>
+<% end %>

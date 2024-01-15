@@ -1,0 +1,26 @@
+<div id="<%= dom_id account %>">
+  <div class="container text-left">
+
+    <div class="account-row">
+      <div class="col">
+        <%= account.name %>
+      </div>
+    </div>
+
+    <div class="account-row">
+      <div class="col">
+        <h5 style="margin: 0; font-weight: bold; font-size: 24px; display: inline-block;">
+          <%= number_to_currency(account.calculate_available_balance) %>
+        </h5>
+        <p style="margin: 0; font-size: 14px; color: gray; display: inline-block; margin-left: 10px;">Available Now</p>
+      </div>
+    </div>
+
+    <div class="account-row">
+      <div class="col">
+        <p style="margin: 0; font-size: 12px; color: gray;">Current Balance: <%= number_to_currency(account.current_balance) %></p>
+      </div>
+    </div>
+
+  </div>
+</div>

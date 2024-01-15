@@ -1,0 +1,41 @@
+<%= form_with(model: exp_transaction) do |form| %>
+  <% if exp_transaction.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(exp_transaction.errors.count, "error") %> prohibited this exp_transaction from being saved:</h2>
+
+      <ul>
+        <% exp_transaction.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <br/>
+  <div>
+    <%= form.date_field :date, class:"form-control", placeholder:"date" %>
+  </div>
+  <br/>
+  <div>
+    <%= form.text_field :source, class:"form-control", placeholder:"source" %>
+  </div>
+  <br/>
+  <div>
+    <%= form.text_field :description, class:"form-control", placeholder:"description" %>
+  </div>
+  <br/>
+  <div>
+    <%= form.text_field :amount, class:"form-control", placeholder:"amount" %>
+  </div>
+  <br/>
+
+
+  <div>
+    <%= form.hidden_field :expense_id, value: @expense.id %>
+  </div>
+
+  <div>
+  <%= form.submit "Submit", class: "btn btn-success" %>
+  </div>
+
+<% end %>

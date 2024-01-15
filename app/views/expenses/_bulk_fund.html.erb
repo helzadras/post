@@ -1,0 +1,14 @@
+<!-- app/views/expenses/bulk_fund.html.erb -->
+
+<%= form_tag(bulk_fund_expenses_path, method: :post) do %>
+  <div class="mb-3">
+    <%= label_tag 'default_amount', 'Default Amount:' %>
+    <%= text_field_tag 'default_amount', nil, class: 'form-control' %>
+  </div>
+
+  <%= hidden_field_tag 'account_id', params[:account_id] %>
+
+  <div class="text-center">
+    <%= submit_tag 'Fund All Expenses', class: 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+<div id="<%= dom_id acc_transaction %>">
+  <p>
+    <strong>Date:</strong>
+    <%= acc_transaction.date %>
+  </p>
+
+  <p>
+    <strong>Source:</strong>
+    <%= acc_transaction.source %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= acc_transaction.description %>
+  </p>
+
+  <p>
+    <strong>Amount:</strong>
+    <%= number_to_currency(acc_transaction.amount) %>
+  </p>
+
+
+</div>

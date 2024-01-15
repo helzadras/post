@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: boa
+    envVars:
+      - key: RAILS_ENV
+        value: production
+    buildCommand: |
+      gem install bundler -v '3.2.2'
+      bundle install --path vendor/bundle --clean
+      bundle exec rake assets:precompilebundle exec rake assets:precompile
+    startCommand: bundle exec puma -C config/puma.rb
+    rubyVersion: '3.2.2'
+
+static:
+  - include:
+      - public

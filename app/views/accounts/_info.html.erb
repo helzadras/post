@@ -1,0 +1,11 @@
+<div id="accounts">
+  <% @accounts.each do |account| %>
+    <a href="<%= account_path(account) %>" class="card-link">
+      <div class="card border-white">
+        <div class="card-body">
+          <%= render info %>
+        </div>
+      </div>
+    </a>
+  <% end %>
+</div>

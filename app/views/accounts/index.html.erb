@@ -1,0 +1,23 @@
+
+<div class="d-flex justify-content-between align-items-center">
+    <h1>
+      <strong>
+        Accounts
+      </strong>
+    
+    <%= link_to image_tag('plus.svg', :size => "35x35"), new_account_path %>
+    </h1>
+</div>    
+
+<div id="accounts">
+  <% @accounts.each do |account| %>
+    <a href="<%= account_path(account) %>" class="card-link">
+      <div class="card border-white">
+        <div class="card-body">
+          <%= render account %>
+        </div>
+      </div>
+    </a>
+  <% end %>
+</div>
+

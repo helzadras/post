@@ -1,0 +1,75 @@
+<%= form_with(model: @expense, local: true) do |form| %>
+  <% if expense.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(expense.errors.count, "error") %> prohibited this expense from being saved:</h2>
+      <ul>
+        <% expense.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div>
+    <%= form.text_field :funds, class: "form-control", placeholder: "current funds" %>
+  </div>
+  <br/>
+
+  <div>
+    <%= form.text_field :creditor, class: "form-control", placeholder: "creditor" %>
+  </div>
+  <br/>
+
+  <div>
+    <%= form.text_field :purpose, class: "form-control", placeholder: "purpose" %>
+  </div>
+  <br/>
+
+  <div>
+    <%= form.text_field :initial_balance, class: "form-control", placeholder: "initial_balance" %>
+  </div>
+  <br/>
+
+  <div>
+    <%= form.text_field :interest, class: "form-control", placeholder: "interest" %>
+  </div>
+  <br/>
+
+  <div>
+    <%= form.text_field :current_balance, class: "form-control", placeholder: "current balance" %>
+  </div>
+  <br/>
+
+  <div>
+    <%= form.text_field :due_date, class: "form-control", placeholder: "due_date" %>
+  </div>
+  <br/>
+
+  <div>
+    <%= form.text_field :terms, class: "form-control", placeholder: "terms" %>
+  </div>
+  <br/>
+
+  <div>
+    <%= form.text_field :amount_due, class: "form-control", placeholder: "amount_due" %>
+  </div>
+  <br/>
+
+  <div>
+    <% if @account %>
+      <%= form.hidden_field :account_id, value: @account.id %>
+    <% end %>
+  </div>
+  <br/>
+
+  <div>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Submit", class: "btn btn-success" %>
+  </div>
+<% end %>
+
+

@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+
+
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <%= link_to image_tag('snake.png', :size => "80x80"), '/' %>
+      </li>
+    </ul>
+
+    <% if user_signed_in? %>
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= button_to "sign-out", destroy_user_session_path, method: :delete, class:"nav-link" %>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to "edit profile", edit_user_registration_path, class:"nav-link" %>
+        </li>
+      </ul>
+
+    <% else %>
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to "sign-in", new_user_session_path, class:"nav-link" %>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to "sign-up", new_user_registration_path, class:"nav-link" %>
+        </li>
+      </ul>
+
+    <% end %>
+
+  </div>
+</nav>
+

@@ -1,0 +1,13 @@
+<h7><% @account.name %></h7>
+<h2>Edit</h2>
+
+<%= render "form", acc_transaction: @acc_transaction %>
+
+<br>
+
+<div>
+  <%= link_to "Show", @acc_transaction, class:"btn btn-secondary" %>
+
+  <%= link_to "Back", account_path(@account), class:"btn btn-secondary" %>
+
+</div>
